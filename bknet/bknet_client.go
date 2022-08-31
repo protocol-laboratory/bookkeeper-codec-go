@@ -50,12 +50,6 @@ type BookkeeperNetClient struct {
 	closeCh      chan struct{}
 }
 
-type buffer struct {
-	max    int
-	bytes  []byte
-	cursor int
-}
-
 func (b *BookkeeperNetClient) req(request *pb.Request) (*pb.Response, error) {
 	reqBytes, err := request.Marshal()
 	if err != nil {
